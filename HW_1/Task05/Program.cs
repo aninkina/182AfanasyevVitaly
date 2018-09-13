@@ -17,6 +17,12 @@ namespace Task05
                 Console.ReadKey();
                 return;
             }
+            if ((cath1 <= 0) || (cath2 <= 0))
+            {
+                Console.WriteLine("Ошибка! Длины катетов должны быть строго положительными!");
+                Console.ReadKey();
+                return;
+            }
             double hyp = Math.Sqrt(cath1 * cath1 + cath2 * cath2);
             Console.WriteLine("Длина гипотенузы = " + hyp.ToString());
             Console.ReadKey();
