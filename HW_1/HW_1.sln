@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASCIIDecoder", "ASCIIDecode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task04", "Task4\Task04.csproj", "{6BD15F1E-640D-4F55-AC36-7ABD2615009A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task5", "Task5\Task5.csproj", "{3A31BF24-A396-47C0-9DDD-D2A49D133013}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task05", "Task5\Task05.csproj", "{3A31BF24-A396-47C0-9DDD-D2A49D133013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
