@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-namespace ASCIIDecoder
+namespace Task04
 {
     class Program
     {
