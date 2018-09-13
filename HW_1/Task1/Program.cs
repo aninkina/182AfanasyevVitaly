@@ -6,7 +6,7 @@ namespace Task1
     {
         static void Main()
         {
-
+            
         }
     }
 }
