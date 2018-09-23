@@ -39,7 +39,7 @@ namespace Task01
             do
             {
                 double x = InputDouble("real number X");
-                Console.WriteLine($"F(X) = {F(x)}");
+                Console.WriteLine($"F(X) = {F(x):G3}");
                 Console.WriteLine("Press ESC to exit. Press any other key to continue");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
