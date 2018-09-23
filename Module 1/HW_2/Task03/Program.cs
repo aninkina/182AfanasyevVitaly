@@ -17,8 +17,9 @@ namespace Task03
 
         static string SolveQuadratic(double a, double b, double c)
         {
-            double D = b * b - 4 * a * c;
+            double D = checked(b * b - 4 * a * c);
             return D < 0 ? "Solution is in complex numbers" : 
+                a == 0 ? (b == 0) ? (c != 0) ? "No solutions" : "Infinite solutions" : $"One solution X = {-c / b}" :
                 D == 0 ? $"One solution. X = {-b / (2 * a):F3}" :
                 $"Two solutions. X1 = {(-b + Math.Sqrt(D)) / (2 * a):F3}, X2 = {(-b - Math.Sqrt(D)) / (2 * a):F3}";
         }
