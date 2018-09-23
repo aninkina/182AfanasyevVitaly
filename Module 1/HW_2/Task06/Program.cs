@@ -42,7 +42,7 @@ namespace Task06
         {
             do
             {
-                double budget = InputDouble("your budget");
+                double budget = InputDouble("your budget", 0.0);
                 int percent = InputInt("percentage of your budget for computer games (integer from 0 to 100)", 0, 100);
                 double sum = (budget / 100.0) * percent;
                 Console.WriteLine($"Money for computer games: {sum:C3}");
