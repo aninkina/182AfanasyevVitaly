@@ -2,11 +2,11 @@
 
 namespace Task04
 {
-	delegate bool Comp<T>(T x, T y);
+    delegate bool Comp<T>(T x, T y);
 
     class Program
     {
-		/// <summary>
+        /// <summary>
         /// Inputs and parses the int.
         /// </summary>
         /// <returns>The int.</returns>
@@ -67,37 +67,37 @@ namespace Task04
         /// <param name="result">Result.</param>
         /// <param name="eps">Eps.</param>
         static bool Newton(double x, out double result, out double eps)
-		{
-			double k1, k2 = x;
-			result = eps = 0;
-			if (x < 0)
-				return false;
-			do
-			{
-				k1 = k2;
-				eps = (x / k1 - k1) / 2;
-				k2 += eps;
-			} while (k1 != k2);
-			result = k1;
-			return true;
-		}
+        {
+            double k1, k2 = x;
+            result = eps = 0;
+            if (x < 0)
+                return false;
+            do
+            {
+                k1 = k2;
+                eps = (x / k1 - k1) / 2;
+                k2 += eps;
+            } while (k1 != k2);
+            result = k1;
+            return true;
+        }
 
         static void Main()
         {
-			do
-			{
-				Console.Clear();
+            do
+            {
+                Console.Clear();
 
-				double num = InputDouble("sub radical expression");
-				double result, eps;
+                double num = InputDouble("sub radical expression");
+                double result, eps;
     
-				if (!Newton(num, out result, out eps))
-					Console.WriteLine("Error! Negative sub radical expression!");
-				else
-					Console.WriteLine($"Square root of {num} = {result:G4}, eps = {eps:e3}");
+                if (!Newton(num, out result, out eps))
+                    Console.WriteLine("Error! Negative sub radical expression!");
+                else
+                    Console.WriteLine($"Square root of {num} = {result:G4}, eps = {eps:e3}");
 
-				Console.WriteLine("Press ESC to exit. Press any other key to continue.");
-			} while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+                Console.WriteLine("Press ESC to exit. Press any other key to continue.");
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
     }
 }
