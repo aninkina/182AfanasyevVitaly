@@ -112,9 +112,10 @@ namespace Task01Page13
         {
             int result = FindThreeDigit();
 
+			Console.WriteLine($"N: {result}\nSum: {SumAryphm(result)}");
             Console.WriteLine($"1+2+3+...+{result - 2}+{result - 1}+{result}");
 
-            Console.WriteLine("Press any key to exit");
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
     }
