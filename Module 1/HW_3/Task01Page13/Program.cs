@@ -92,7 +92,7 @@ namespace Task01Page13
             if (x < 100 || x > 999)
                 return false;
             return (x / 100) == (x / 10 % 10) && (x / 100) == (x % 10);
-		}
+        }
 
         /// <summary>
         /// Finds equal-digit three-digit number, that equals sum from 1 to N.
