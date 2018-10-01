@@ -1,12 +1,23 @@
 ﻿using System;
 
+/*
+   Дисциплина: "Программирование"
+   Группа: БПИ182_1
+   Студент: Афанасьев Виталий Олегович
+   Задача: 
+            Написать метод, вычисляющий значение функции G = F(X, Y)
+            G = X + sin(Y), X < Y и X > 0
+            G = Y - cos(X), X > Y и X < 0
+            G = 0.5 * X * Y, в остальных случаях.
+*/
+
 namespace Task02Page14
 {
     delegate bool Comp<T>(T x, T y);
 
     class Program
     {
-		/// <summary>
+        /// <summary>
         /// Inputs and parses the int.
         /// </summary>
         /// <returns>The int.</returns>
@@ -59,20 +70,19 @@ namespace Task02Page14
         }
 
         /// <summary>
-		/// Finds value of function G(x, y).
+        /// Finds value of function G(x, y).
         /// </summary>
         /// <returns>Value of function.</returns>
         /// <param name="x">Real number x.</param>
         /// <param name="y">Real number y.</param>
-		static double G(double x, double y)
-		{
-			if ((x < y) && (x > 0))
-				return x + Math.Sin(y);
-			else if ((x > y) && (x < 0))
-				return y - Math.Cos(x);
-			else
-				return 0.5 * x * y;
-		}
+        static double G(double x, double y)
+        {
+            if ((x < y) && (x > 0))
+                return x + Math.Sin(y);
+            if ((x > y) && (x < 0))
+                return y - Math.Cos(x);
+            return 0.5 * x * y;
+        }
 
         static void Main()
         {
@@ -80,10 +90,10 @@ namespace Task02Page14
             {
                 Console.Clear();
 
-				double x = InputDouble("real number x");
+                double x = InputDouble("real number x");
                 double y = InputDouble("real number y");
 
-				Console.WriteLine($"G({x}, {y}) = {G(x, y):0.###}");
+                Console.WriteLine($"G({x}, {y}) = {G(x, y):0.###}");
 
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);

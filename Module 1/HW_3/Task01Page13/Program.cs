@@ -1,12 +1,26 @@
 ﻿using System;
 
+/*
+   Дисциплина: "Программирование"
+   Группа: БПИ182_1
+   Студент: Афанасьев Виталий Олегович
+   Задача: 
+           Написать метод, находящий трехзначное десятичное число s, 
+           все цифры которого одинаковы и которое представляет собой сумму первых
+           членов натурального ряда, то есть s = 1+2+3+4+…
+           Вывести полученное число, количество членов ряда и условное
+           изображение соответствующей суммы, в которой указаны первые три 
+           и последние три члена, а средние члены обозначены многоточием. 
+*/
+
+
 namespace Task01Page13
 {
     delegate bool Comp<T>(T x, T y);
 
     class Program
     {
-		/// <summary>
+        /// <summary>
         /// Inputs and parses the int.
         /// </summary>
         /// <returns>The int.</returns>
@@ -63,10 +77,10 @@ namespace Task01Page13
         /// </summary>
         /// <returns>The sum.</returns>
         /// <param name="n">N.</param>
-		static int SumAryphm(int n)
-		{
-			return (1 + n) * n / 2;
-		}
+        static int SumAryphm(int n)
+        {
+            return (1 + n) * n / 2;
+        }
 
         /// <summary>
         /// Checks if all digits of three-digit number are equal
@@ -74,10 +88,10 @@ namespace Task01Page13
         /// <returns><c>true</c>, if number is three-digit and all digits are equal, <c>false</c> otherwise.</returns>
         /// <param name="x">The x coordinate.</param>
         static bool ThreeDigitEquals(int x)
-		{
-			if (x < 100 || x > 999)
-				return false;
-			return (x / 100) == (x / 10 % 10) && (x / 100) == (x % 10);
+        {
+            if (x < 100 || x > 999)
+                return false;
+            return (x / 100) == (x / 10 % 10) && (x / 100) == (x % 10);
 		}
 
         /// <summary>
@@ -85,23 +99,23 @@ namespace Task01Page13
         /// </summary>
         /// <returns>N</returns>
         static int FindThreeDigit()
-		{
-			int result = 1;
-			while (!ThreeDigitEquals(SumAryphm(result)))
-			{
-				result++;
-			}
-			return result;
-		}
+        {
+            int result = 1;
+            while (!ThreeDigitEquals(SumAryphm(result)))
+            {
+                result++;
+            }
+            return result;
+        }
 
         static void Main()
-		{
+        {
             int result = FindThreeDigit();
 
-			Console.WriteLine($"1+2+3+...+{result - 2}+{result - 1}+{result}");
+            Console.WriteLine($"1+2+3+...+{result - 2}+{result - 1}+{result}");
 
-			Console.WriteLine("Press any key to exit");
-			Console.ReadKey();
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
         }
     }
 }

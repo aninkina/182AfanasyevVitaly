@@ -1,12 +1,21 @@
 ﻿using System;
 
+/*
+   Дисциплина: "Программирование"
+   Группа: БПИ182_1
+   Студент: Афанасьев Виталий Олегович
+   Задача: 
+           Написать метод, преобразующий число переданное в качестве параметра в число, 
+           записанное теми же цифрами, но идущими в обратном порядке.  
+*/
+
 namespace Task02Page13
 {
     delegate bool Comp<T>(T x, T y);
 
     class Program
     {
-		/// <summary>
+        /// <summary>
         /// Inputs and parses the int.
         /// </summary>
         /// <returns>The int.</returns>
@@ -63,17 +72,17 @@ namespace Task02Page13
         /// </summary>
         /// <returns>Reversed number.</returns>
         /// <param name="n">Number.</param>
-		static int ReverseNumber(int n)
-		{
-			int result = 0;
-			while (n > 0)
-			{
-				result *= 10;
-				result += n % 10;
-				n /= 10;
-			}
-			return result;
-		}
+        static int ReverseNumber(int n)
+        {
+            int result = 0;
+            while (n > 0)
+            {
+                result *= 10;
+                result += n % 10;
+                n /= 10;
+            }
+            return result;
+        }
 
         static void Main()
         {
@@ -81,9 +90,9 @@ namespace Task02Page13
             {
                 Console.Clear();
                 
-				int number = InputInt("integer", 0, int.MaxValue, (x, y) => x < y, (x, y) => x > y);
+                int number = InputInt("integer", 0, int.MaxValue, (x, y) => x < y, (x, y) => x > y);
 
-				int result = ReverseNumber(number);
+                int result = ReverseNumber(number);
 
                 Console.WriteLine($"Reversed number: {result}");
 

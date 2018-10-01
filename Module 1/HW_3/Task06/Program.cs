@@ -1,12 +1,28 @@
 ﻿using System;
 
+/*
+   Дисциплина: "Программирование"
+   Группа: БПИ182_1
+   Студент: Афанасьев Виталий Олегович
+   Задача: 
+            Написать метод для расчета сложных процентов.
+
+            Параметры: начальный капитал, годовая процентная ставка, число лет (вклада).
+
+            Возвращаемое значение – итоговая сумма в конце срока вклада.
+            static double Total(double k, double r, uint n)
+
+            В основной программе ввести начальный капитал (больший нуля), процентную ставку и число лет. 
+            Вывести таблицу значений итоговых сумм в конце каждого года вплоть до заданного числа лет.
+*/
+
 namespace Task06
 {
 	delegate bool Comp<T>(T x, T y);
 
     class Program
     {
-		/// <summary>
+        /// <summary>
         /// Inputs and parses the int.
         /// </summary>
         /// <returns>The int.</returns>
@@ -60,30 +76,30 @@ namespace Task06
         
         
         static void PrintYearBudget(int year, double budget)
-		{
-			Console.WriteLine($"{year}\t|\t{budget:0.###}");
-		}
+        {
+            Console.WriteLine($"{year}\t|\t{budget:0.###}");
+        }
 
         /// <summary>
-        /// Finds total budget ...
+        /// Finds total budget after deposit.
         /// </summary>
         /// <returns>The total.</returns>
         /// <param name="startBudget">Start budget.</param>
         /// <param name="percent">Percent.</param>
         /// <param name="years">Years.</param>
         static double Total(double startBudget, double percent, int years)
-		{
-			Console.WriteLine("Year\t|\tBudget");
-			Console.WriteLine("------------------------");
-			Console.WriteLine($"0\t|\t{startBudget}");
-			double tmpBudget = startBudget;
-			for (int i = 1; i <= years; i++)
-			{
-				tmpBudget = tmpBudget * (double)(1.0 + percent / 100.0);
-				PrintYearBudget(i, tmpBudget);
-			}
-			return tmpBudget;
-		}
+        {
+            Console.WriteLine("Year\t|\tBudget");
+            Console.WriteLine("------------------------");
+            Console.WriteLine($"0\t|\t{startBudget}");
+            double tmpBudget = startBudget;
+            for (int i = 1; i <= years; i++)
+            {
+                tmpBudget = tmpBudget * (double)(1.0 + percent / 100.0);
+                PrintYearBudget(i, tmpBudget);
+            }
+            return tmpBudget;
+        }
 
         static void Main()
         {
@@ -91,13 +107,13 @@ namespace Task06
             {
                 Console.Clear();
 
-				double startBudget = InputDouble("start budget", 0, double.MaxValue, (x, y) => x <= y, (x, y) => x > y);
-				double percent = InputDouble("year percentage", 0, 100, (x, y) => x < y, (x, y) => x > y);
-				int years = InputInt("amount of years", 0, int.MaxValue, (x, y) => x <= y, (x, y) => x > y );
+                double startBudget = InputDouble("start budget", 0, double.MaxValue, (x, y) => x <= y, (x, y) => x > y);
+                double percent = InputDouble("year percentage", 0, 100, (x, y) => x < y, (x, y) => x > y);
+                int years = InputInt("amount of years", 0, int.MaxValue, (x, y) => x <= y, (x, y) => x > y );
                 
-				double result = Total(startBudget, percent, years);
+                double result = Total(startBudget, percent, years);
 
-				Console.WriteLine($"Total budget: {result:0.###}");
+                Console.WriteLine($"Total budget: {result:0.###}");
 
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);

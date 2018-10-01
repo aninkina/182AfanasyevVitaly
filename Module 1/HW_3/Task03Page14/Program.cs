@@ -1,12 +1,22 @@
 ﻿using System;
 
+/*
+   Дисциплина: "Программирование"
+   Группа: БПИ182_1
+   Студент: Афанасьев Виталий Олегович
+   Задача: 
+            Написать метод, вычисляющий значение функции G = F(X)
+            G = sin(PI/2), X <= 0.5
+            G = sin(PI * (x - 1) / 2), X > 0.5
+*/
+
 namespace Task03Page14
 {
     delegate bool Comp<T>(T x, T y);
 
     class Program
     {
-		/// <summary>
+        /// <summary>
         /// Inputs and parses the int.
         /// </summary>
         /// <returns>The int.</returns>
@@ -65,10 +75,9 @@ namespace Task03Page14
         /// <param name="x">Real number x.</param>
         static double G(double x)
         {
-			if (x <= 0.5)
-				return Math.Sin(Math.PI / 2);
-			else
-				return Math.Sin(Math.PI * (x - 1) / 2);
+            if (x <= 0.5)
+                return Math.Sin(Math.PI / 2);
+            return Math.Sin(Math.PI * (x - 1) / 2);
         }
 
         static void Main()
@@ -77,7 +86,7 @@ namespace Task03Page14
             {
                 Console.Clear();
 
-				double x = InputDouble("real number x");
+                double x = InputDouble("real number x");
 
                 Console.WriteLine($"G({x}) = {G(x):0.###}");
 
