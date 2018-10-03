@@ -81,7 +81,7 @@ namespace Task03
             }
             return c;
         }
-        
+
         /// <summary>
         /// Inputs and parses the uint.
         /// </summary>
@@ -107,14 +107,14 @@ namespace Task03
         {
             return InputUInt(input, uint.MinValue, uint.MaxValue, (x, y) => x < y, (x, y) => x > y);
         }
-        
+
         static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
             a = b;
             b = tmp;
         }
-        
+
         /// <summary>
         /// Finds perimeter and area of a triangle with sides x, y and z.
         /// </summary>
@@ -126,30 +126,30 @@ namespace Task03
         /// <param name="s">Area.</param>
         static bool Triangle(double x, double y, double z, out double p, out double s)
         {
-			p = s = 0;
+            p = s = 0;
             if ((x + y <= z) || (x + z <= y) || (y + z <= x))
                 return false;
-			p = x + y + z;
-			s = Math.Sqrt(p / 2 * (p / 2 - x) * (p / 2 - y) * (p / 2 - z));
-            return true; 
+            p = x + y + z;
+            s = Math.Sqrt(p / 2 * (p / 2 - x) * (p / 2 - y) * (p / 2 - z));
+            return true;
         }
-        
+
         static void Main()
         {
             do
             {
                 Console.Clear();
 
-				double x = InputDouble("length of the first side of a triangle", 0, double.MaxValue, (a, b) => a <= b, (a, b) => a > b);
+                double x = InputDouble("length of the first side of a triangle", 0, double.MaxValue, (a, b) => a <= b, (a, b) => a > b);
                 double y = InputDouble("length of the second side of a triangle", 0, double.MaxValue, (a, b) => a <= b, (a, b) => a > b);
                 double z = InputDouble("length of the third side of a triangle", 0, double.MaxValue, (a, b) => a <= b, (a, b) => a > b);
-				double p, s;
-                
+                double p, s;
+
                 if (Triangle(x, y, z, out p, out s))
                     Console.WriteLine($"Perimeter: {p}\nArea: {s}");
                 else
                     Console.WriteLine("Error! This triangle doesn\'t exist!");
-                
+
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }

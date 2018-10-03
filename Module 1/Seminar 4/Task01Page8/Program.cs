@@ -81,7 +81,7 @@ namespace Task01Page8
             }
             return c;
         }
-        
+
         /// <summary>
         /// Inputs and parses the uint.
         /// </summary>
@@ -107,19 +107,19 @@ namespace Task01Page8
         {
             return InputUInt(input, uint.MinValue, uint.MaxValue, (x, y) => x < y, (x, y) => x > y);
         }
-        
+
         static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
             a = b;
             b = tmp;
         }
-        
+
         static bool CheckSolve(int a, int b, int c)
         {
-			return a * a + b * b == c * c;
+            return a * a + b * b == c * c;
         }
-        
+
         /// <summary>
         /// Finds all solutions of a^2 + b^2 = c^2. a, b, c = [l, r].
         /// </summary>
@@ -128,34 +128,34 @@ namespace Task01Page8
         /// <param name="r">Right border.</param>
         static List<(int, int, int)> FindSolutions(int l = 1, int r = 20)
         {
-			List<(int, int, int)> list = new List<(int, int, int)>();
-			for (int a = l; a <= r; a++)
+            List<(int, int, int)> list = new List<(int, int, int)>();
+            for (int a = l; a <= r; a++)
             {
-				for (int b = a; b <= r; b++)
+                for (int b = a; b <= r; b++)
                 {
-					for (int c = b; c <= r; c++)
+                    for (int c = b; c <= r; c++)
                     {
-						if (CheckSolve(a, b, c))
-							list.Add((a, b, c));
+                        if (CheckSolve(a, b, c))
+                            list.Add((a, b, c));
                     }
                 }
             }
-			return list;
+            return list;
         }
-        
+
         static void Main()
         {
             Console.Clear();
 
-			List<(int, int, int)> ans = FindSolutions();
-			Console.WriteLine($"{ans.Count} solutions:");
+            List<(int, int, int)> ans = FindSolutions();
+            Console.WriteLine($"{ans.Count} solutions:");
             foreach ((int, int, int) n in ans)
             {
-				Console.WriteLine($"{n.Item1}^2 + {n.Item2}^2 = {n.Item3}^2");
+                Console.WriteLine($"{n.Item1}^2 + {n.Item2}^2 = {n.Item3}^2");
             }
-            
+
             Console.WriteLine("Press any key to exit.");
-			Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }

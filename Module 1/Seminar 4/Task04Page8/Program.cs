@@ -80,7 +80,7 @@ namespace Task02Page8
             }
             return c;
         }
-        
+
         /// <summary>
         /// Inputs and parses the uint.
         /// </summary>
@@ -106,14 +106,14 @@ namespace Task02Page8
         {
             return InputUInt(input, uint.MinValue, uint.MaxValue, (x, y) => x < y, (x, y) => x > y);
         }
-        
+
         static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
             a = b;
             b = tmp;
         }
-        
+
         /// <summary>
         /// Powers 2 to the power of N.
         /// </summary>
@@ -123,7 +123,7 @@ namespace Task02Page8
         {
             return (uint)1 << n;
         }
-        
+
         static void Main()
         {
             do
@@ -132,7 +132,7 @@ namespace Task02Page8
 
                 int n = InputInt("positive integer N (0 - 31)", 0, 31, (x, y) => x < y, (x, y) => x > y);
                 int m = InputInt("positive integer M (0 - 31)", 0, 31, (x, y) => x < y, (x, y) => x > y);
-				
+
                 uint n2 = Power2(n), m2 = Power2(m);
                 try
                 {
@@ -142,7 +142,7 @@ namespace Task02Page8
                 {
                     Console.WriteLine("Too large numbers!");
                 }
-                
+
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }

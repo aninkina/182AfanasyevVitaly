@@ -80,7 +80,7 @@ namespace Task02Page8
             }
             return c;
         }
-        
+
         /// <summary>
         /// Inputs and parses the uint.
         /// </summary>
@@ -106,54 +106,54 @@ namespace Task02Page8
         {
             return InputUInt(input, uint.MinValue, uint.MaxValue, (x, y) => x < y, (x, y) => x > y);
         }
-        
+
         static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
             a = b;
             b = tmp;
         }
-        
-        
+
+
         /// <summary>
         /// Inputs integers while sum of negative numbers >= -1000.
         /// </summary>
         /// <returns>Sum of negative numbers and number of them.</returns>
         static (int, int) InputNumbers()
         {
-			int sumNeg = 0, countNeg = 0, a;
-			bool inputing = true;
-			do
-			{
-				Console.WriteLine("Enter integer. Enter \"stop\" to stop.");
-				string input = Console.ReadLine();
-				if (input == "stop")
-					inputing = false;
-				else if (int.TryParse(input, out a))
+            int sumNeg = 0, countNeg = 0, a;
+            bool inputing = true;
+            do
+            {
+                Console.WriteLine("Enter integer. Enter \"stop\" to stop.");
+                string input = Console.ReadLine();
+                if (input == "stop")
+                    inputing = false;
+                else if (int.TryParse(input, out a))
                 {
                     if (a < 0)
                     {
-						sumNeg += a;
-						countNeg++;
+                        sumNeg += a;
+                        countNeg++;
                     }
                 }
-				else
-					Console.WriteLine("Invalid input format! Try again!");
-			} while (inputing && (sumNeg >= -1000));
-			return (sumNeg, countNeg);
+                else
+                    Console.WriteLine("Invalid input format! Try again!");
+            } while (inputing && (sumNeg >= -1000));
+            return (sumNeg, countNeg);
         }
-        
+
         static void Main()
         {
-			do
-			{
-				Console.Clear();
+            do
+            {
+                Console.Clear();
 
-				(int, int) input = InputNumbers();
-				if (input.Item2 > 0)
-					Console.WriteLine($"Average of negative numbers: {(double)input.Item1 / input.Item2}");
-				else
-					Console.WriteLine("No negative numbers was inputed!");
+                (int, int) input = InputNumbers();
+                if (input.Item2 > 0)
+                    Console.WriteLine($"Average of negative numbers: {(double)input.Item1 / input.Item2}");
+                else
+                    Console.WriteLine("No negative numbers was inputed!");
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }

@@ -80,7 +80,7 @@ namespace Task02Page8
             }
             return c;
         }
-        
+
         /// <summary>
         /// Inputs and parses the uint.
         /// </summary>
@@ -106,19 +106,19 @@ namespace Task02Page8
         {
             return InputUInt(input, uint.MinValue, uint.MaxValue, (x, y) => x < y, (x, y) => x > y);
         }
-        
+
         static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
             a = b;
             b = tmp;
         }
-        
+
         static void OutputY(double a, double b, double c, double x, double func)
         {
-			Console.WriteLine($"Y({a:0.###}, {b:0.###}, {c:0.###}, {x:F2}) = {func:0.###}");
+            Console.WriteLine($"Y({a:0.###}, {b:0.###}, {c:0.###}, {x:F2}) = {func:0.###}");
         }
-        
+
         /// <summary>
         /// Finds specified function Y(a, b, c, x), where x = [1, 2], deltaX = 0.05.
         /// </summary>
@@ -127,31 +127,31 @@ namespace Task02Page8
         /// <param name="c">c.</param>
         static void Y(double a, double b, double c)
         {
-			const double eps = 1e-9;
-			double func;
-			for (double x = 1; x <= 2 + eps; x += 0.05)
+            const double eps = 1e-9;
+            double func;
+            for (double x = 1; x <= 2 + eps; x += 0.05)
             {
-				if (x < 1.2)
-					func = a * x * x + b * x + c;
-				else if ((x >= 1.2 - eps) && (x <= 1.2 + eps))
-					func = a / x + Math.Sqrt(x * x + 1);
-				else
-					func = (a + b * x) / Math.Sqrt(x * x + 1);
-				OutputY(a, b, c, x, func);
+                if (x < 1.2)
+                    func = a * x * x + b * x + c;
+                else if ((x >= 1.2 - eps) && (x <= 1.2 + eps))
+                    func = a / x + Math.Sqrt(x * x + 1);
+                else
+                    func = (a + b * x) / Math.Sqrt(x * x + 1);
+                OutputY(a, b, c, x, func);
             }
         }
-        
+
         static void Main()
         {
             do
             {
                 Console.Clear();
 
-				double a = InputDouble("real number a");
-				double b = InputDouble("real number b");
-				double c = InputDouble("real number c");
-				Y(a, b, c);
-                
+                double a = InputDouble("real number a");
+                double b = InputDouble("real number b");
+                double c = InputDouble("real number c");
+                Y(a, b, c);
+
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }

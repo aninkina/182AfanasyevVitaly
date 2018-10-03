@@ -81,7 +81,7 @@ namespace Task01
             }
             return c;
         }
-        
+
         /// <summary>
         /// Inputs and parses the uint.
         /// </summary>
@@ -107,47 +107,47 @@ namespace Task01
         {
             return InputUInt(input, uint.MinValue, uint.MaxValue, (x, y) => x < y, (x, y) => x > y);
         }
-        
+
         static void Swap<T>(ref T a, ref T b)
         {
-			T tmp = a;
-			a = b;
-			b = tmp;
+            T tmp = a;
+            a = b;
+            b = tmp;
         }
-        
+
         /// <summary>
         /// Sorts three-digit number in non-increasing order.
         /// </summary>
         /// <returns><c>true</c>, if number is three-digit, <c>false</c> otherwise.</returns>
         /// <param name="numb">Unsigned integer.</param>
-		static bool Transform(ref uint numb)
+        static bool Transform(ref uint numb)
         {
-			if ((numb < 100) || (numb > 999))
-				return false;
-			uint x1 = numb / 100, x2 = numb / 10 % 10, x3 = numb % 10;
-			if (x1 < x2)
-				Swap(ref x1, ref x2);
-			if (x1 < x3)
-				Swap(ref x1, ref x3);
-			if (x2 < x3)
-				Swap(ref x2, ref x3);
-			numb = x1 * 100 + x2 * 10 + x3;
-			return true; 
+            if ((numb < 100) || (numb > 999))
+                return false;
+            uint x1 = numb / 100, x2 = numb / 10 % 10, x3 = numb % 10;
+            if (x1 < x2)
+                Swap(ref x1, ref x2);
+            if (x1 < x3)
+                Swap(ref x1, ref x3);
+            if (x2 < x3)
+                Swap(ref x2, ref x3);
+            numb = x1 * 100 + x2 * 10 + x3;
+            return true;
         }
-        
+
         static void Main()
         {
             do
             {
                 Console.Clear();
 
-				uint a = InputUInt("three-digit integer");
-                
-				if (Transform(ref a))
-					Console.WriteLine($"Transformed number: {a}");
-				else
-					Console.WriteLine("Error! Number isn\'t three-digit!");
-                
+                uint a = InputUInt("three-digit integer");
+
+                if (Transform(ref a))
+                    Console.WriteLine($"Transformed number: {a}");
+                else
+                    Console.WriteLine("Error! Number isn\'t three-digit!");
+
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }

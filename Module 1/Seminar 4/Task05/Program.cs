@@ -81,7 +81,7 @@ namespace Task05
             }
             return c;
         }
-        
+
         /// <summary>
         /// Inputs and parses the uint.
         /// </summary>
@@ -107,20 +107,20 @@ namespace Task05
         {
             return InputUInt(input, uint.MinValue, uint.MaxValue, (x, y) => x < y, (x, y) => x > y);
         }
-        
+
         static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
             a = b;
             b = tmp;
         }
-        
-        
+
+
         static void ShowPartSum(int k, double sum)
         {
-			Console.WriteLine($"{k, -5} {sum, 5:F3}");
+            Console.WriteLine($"{k,-5} {sum,5:F3}");
         }
-        
+
         /// <summary>
         /// Calculates the specified sum from 1 to K.
         /// </summary>
@@ -128,27 +128,27 @@ namespace Task05
         /// <param name="k">K.</param>
         static double CalculateSum(uint k)
         {
-			double sum = 0;
-			Console.WriteLine("{0, -5} {1, 5}", "K", "Sum");
-			Console.WriteLine();
-			for (int i = 1; i <= k; i++)
+            double sum = 0;
+            Console.WriteLine("{0, -5} {1, 5}", "K", "Sum");
+            Console.WriteLine();
+            for (int i = 1; i <= k; i++)
             {
-				sum += (k + 0.3) / (3 * k * k + 5);
-				ShowPartSum(i, sum);
+                sum += (k + 0.3) / (3 * k * k + 5);
+                ShowPartSum(i, sum);
             }
-			return sum;
+            return sum;
         }
-        
+
         static void Main()
         {
             do
             {
                 Console.Clear();
 
-				uint k = InputUInt("positive integer k");
+                uint k = InputUInt("positive integer k");
 
-				CalculateSum(k);
-                
+                CalculateSum(k);
+
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }

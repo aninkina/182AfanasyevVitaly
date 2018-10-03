@@ -79,7 +79,7 @@ namespace Task02
                 Console.WriteLine("Invalid input format! Try again!");
                 Console.WriteLine("Enter symbol:");
             }
-			return c;
+            return c;
         }
 
         /// <summary>
@@ -89,24 +89,24 @@ namespace Task02
         /// <param name="ch">Symbol.</param>
 		static bool Shift(ref char ch)
         {
-			if ((ch < 'a') || (ch > 'z'))
-				return false;
+            if ((ch < 'a') || (ch > 'z'))
+                return false;
             ch = (char)(((int)ch + 4 - (int)'a') % 26 + (int)'a');
-			return true;
+            return true;
         }
-        
+
         static void Main()
         {
             do
             {
                 Console.Clear();
 
-				char c = InputChar();
+                char c = InputChar();
 
-				if (Shift(ref c))
-					Console.WriteLine(c);
-				else
-					Console.WriteLine("Error! Symbol isn\'t latin lower symbol (a - z)!");
+                if (Shift(ref c))
+                    Console.WriteLine(c);
+                else
+                    Console.WriteLine("Error! Symbol isn\'t latin lower symbol (a - z)!");
 
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);

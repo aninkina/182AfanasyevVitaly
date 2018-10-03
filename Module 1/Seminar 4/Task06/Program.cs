@@ -81,7 +81,7 @@ namespace Task06
             }
             return c;
         }
-        
+
         /// <summary>
         /// Inputs and parses the uint.
         /// </summary>
@@ -107,14 +107,14 @@ namespace Task06
         {
             return InputUInt(input, uint.MinValue, uint.MaxValue, (x, y) => x < y, (x, y) => x > y);
         }
-        
+
         static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
             a = b;
             b = tmp;
         }
-        
+
         /// <summary>
         /// Calculates the first specified sum.
         /// </summary>
@@ -137,7 +137,7 @@ namespace Task06
             } while (sum1 != sum2);
             return sum1;
         }
-        
+
         /// <summary>
         /// Calculates the second specified sum.
         /// </summary>
@@ -146,19 +146,19 @@ namespace Task06
         static double CalculateSum2(double x)
         {
             double sum1 = 1, sum2 = 1, eps = 0, powX = x;
-			double fact = 1, factCount = 1;
+            double fact = 1, factCount = 1;
             do
             {
                 sum1 = sum2;
                 eps = powX / fact;
                 fact *= (factCount + 1);
-				factCount++;
+                factCount++;
                 powX *= x;
                 sum2 = sum1 + eps;
             } while (sum1 != sum2);
             return sum1;
         }
-        
+
         static void Main()
         {
             do
@@ -168,11 +168,11 @@ namespace Task06
                 double x1 = InputDouble("real number X1", double.MinValue, 31, (a, b) => a < b, (a, b) => a > b);
 
                 Console.WriteLine($"First sum: {CalculateSum1(x1):F3}");
-                
+
                 double x2 = InputDouble("real number X2", double.MinValue, 78, (a, b) => a < b, (a, b) => a > b);
-                
+
                 Console.WriteLine($"Second sum: {CalculateSum2(x2):F3}");
-                
+
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
