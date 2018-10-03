@@ -79,7 +79,7 @@ namespace Task04
         /// <summary>
         /// Calculates square root of X
         /// </summary>
-        /// <returns>The newton.</returns>
+        /// <returns><c>true</c>, if X >= 0, <c>false</c> otherwise.</returns>
         /// <param name="x">Number X.</param>
         /// <param name="result">Result.</param>
         /// <param name="eps">Eps.</param>
