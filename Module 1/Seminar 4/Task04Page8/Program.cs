@@ -121,7 +121,7 @@ namespace Task02Page8
         /// <param name="n">N.</param>
         static uint Power2(int n)
         {
-			return (uint)1 << n;
+            return (uint)1 << n;
         }
         
         static void Main()
@@ -130,17 +130,18 @@ namespace Task02Page8
             {
                 Console.Clear();
 
-				int n = InputInt("positive integer N (0 - 31)", 0, 31, (x, y) => x < y, (x, y) => x > y);
+                int n = InputInt("positive integer N (0 - 31)", 0, 31, (x, y) => x < y, (x, y) => x > y);
                 int m = InputInt("positive integer M (0 - 31)", 0, 31, (x, y) => x < y, (x, y) => x > y);
-				uint n2 = Power2(n), m2 = Power2(m);
-				try
-				{
-				    Console.WriteLine($"2^{n} + 2^{m} = {checked(n2 + m2)}");
-				}
-				catch (OverflowException)
-				{
-					Console.WriteLine("Too large numbers!");
-				}
+				
+                uint n2 = Power2(n), m2 = Power2(m);
+                try
+                {
+                    Console.WriteLine($"2^{n} + 2^{m} = {checked(n2 + m2)}");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Too large numbers!");
+                }
                 
                 Console.WriteLine("Press ESC to exit. Press any other key to continue.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);

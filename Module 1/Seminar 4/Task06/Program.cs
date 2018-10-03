@@ -122,20 +122,20 @@ namespace Task06
         /// <param name="x">Real number x.</param>
         static double CalculateSum1(double x)
         {
-			double sum1 = 0, sum2 = 0, eps = 0, powX = x * x;
-			double fact = 2, pow = 2, factCount = 2, sign = 1;
-			do
-			{
-				sum1 = sum2;
-				eps = sign * pow * powX / fact;
-				sign *= -1;
-				fact = fact * (factCount + 1) * (factCount + 2);
-				factCount += 2;
-				pow *= 4;
-				powX *= x * x;
-				sum2 = sum1 + eps;
-			} while (sum1 != sum2);
-			return sum1;
+            double sum1 = 0, sum2 = 0, eps = 0, powX = x * x;
+            double fact = 2, pow = 2, factCount = 2, sign = 1;
+            do
+            {
+                sum1 = sum2;
+                eps = sign * pow * powX / fact;
+                sign *= -1;
+                fact = fact * (factCount + 1) * (factCount + 2);
+                factCount += 2;
+                pow *= 4;
+                powX *= x * x;
+                sum2 = sum1 + eps;
+            } while (sum1 != sum2);
+            return sum1;
         }
         
         /// <summary>
@@ -165,9 +165,9 @@ namespace Task06
             {
                 Console.Clear();
 
-				double x1 = InputDouble("real number X1", double.MinValue, 31, (a, b) => a < b, (a, b) => a > b);
+                double x1 = InputDouble("real number X1", double.MinValue, 31, (a, b) => a < b, (a, b) => a > b);
 
-				Console.WriteLine($"First sum: {CalculateSum1(x1):F3}");
+                Console.WriteLine($"First sum: {CalculateSum1(x1):F3}");
                 
                 double x2 = InputDouble("real number X2", double.MinValue, 78, (a, b) => a < b, (a, b) => a > b);
                 
