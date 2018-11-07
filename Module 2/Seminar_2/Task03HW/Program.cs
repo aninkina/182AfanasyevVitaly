@@ -102,16 +102,22 @@ namespace Task03HW
         
         public static Complex operator /(Complex a, Complex b)
         {
+            if (b.Re * b.Re + b.Im * b.Im == 0)
+                throw new DivideByZeroException();
             return new Complex((a.Re * b.Re + a.Im * b.Im) / (b.Re * b.Re + b.Im * b.Im), (a.Im * b.Re - a.Re * b.Im) / (b.Re * b.Re + b.Im * b.Im));
         }
         
         public static Complex operator /(Complex a, double b)
         {
+            if (b == 0)
+                throw new DivideByZeroException();
             return new Complex(a.Re / b, a.Im / b);
         }
         
         public static Complex operator /(double b, Complex a)
         {
+            if ((a.Re == 0) || (a.Im == 0))
+                throw new DivideByZeroException();
             return new Complex(b / a.Re, b / a.Im);
         }
     }
