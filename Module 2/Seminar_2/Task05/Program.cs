@@ -69,89 +69,44 @@ namespace Task05
 
     class Program
     {
-        delegate bool Compare<T>(T a, T b);
-    
         /// <summary>
-        /// Parses the input.
+        /// Checks if inputed value meets the conditions.
         /// </summary>
-        /// <returns><c>true</c>, if input was parsed, <c>false</c> otherwise.</returns>
+        /// <returns><c>true</c>, if value met the conditions, <c>false</c> otherwise.</returns>
         /// <param name="input">Input.</param>
-        /// <param name="result">Result.</param>
-        /// <typeparam name="T">Type.</typeparam>
-        static bool ParseInput<T>(string input, out T result)
+        /// <param name="conditions">Conditions.</param>
+        static bool CheckConditions<T>(T input, params Func<T, bool>[] conditions)
         {
-            bool parsed;
-            if (typeof(T) == typeof(int))
+            foreach (Func<T, bool> condition in conditions)
             {
-                int tmpResult;
-                parsed = int.TryParse(input, out tmpResult);
-                result = (T)(object)tmpResult;
+                if (!condition.Invoke(input))
+                    return false;
             }
-            else if (typeof(T) == typeof(double))
-            {
-                double tmpResult;
-                parsed = double.TryParse(input, out tmpResult);
-                result = (T)(object)tmpResult;
-            }
-            else if (typeof(T) == typeof(uint))
-            {
-                uint tmpResult;
-                parsed = uint.TryParse(input, out tmpResult);
-                result = (T)(object)tmpResult;
-            }
-            else if (typeof(T) == typeof(long))
-            {
-                long tmpResult;
-                parsed = long.TryParse(input, out tmpResult);
-                result = (T)(object)tmpResult;
-            }
-            else if (typeof(T) == typeof(byte))
-            {
-                byte tmpResult;
-                parsed = byte.TryParse(input, out tmpResult);
-                result = (T)(object)tmpResult;
-            }
-            else if (typeof(T) == typeof(sbyte))
-            {
-                sbyte tmpResult;
-                parsed = sbyte.TryParse(input, out tmpResult);
-                result = (T)(object)tmpResult;
-            }
-            else if (typeof(T) == typeof(char))
-            {
-                char tmpResult;
-                parsed = char.TryParse(input, out tmpResult);
-                result = (T)(object)tmpResult;
-            }
-            else
-            {
-                result = default(T);
-                parsed = true;
-            }
-            return parsed;
+            return true;
         }
-
+        
         /// <summary>
         /// Inputs and parses the variable of type T.
         /// </summary>
         /// <returns>Variable of type T.</returns>
         /// <param name="input">Input.</param>
-        /// <param name="minValue">Minimum value.</param>
-        /// <param name="maxValue">Maximum value.</param>
-        /// <param name="compMin">Comparator for minValue.</param>
-        /// <param name="compMax">Comparator for maxValue.</param>
-        static T InputVar<T>(string input, T minValue, T maxValue, Compare<T> compMin, Compare<T> compMax)
+        /// <param name="conditions">Conditions.</param>
+        static T InputVar<T>(string input, params Func<T, bool>[] conditions)
         {
+            var parser = typeof(T).GetMethod("TryParse", new[] { typeof(string), typeof(T).MakeByRefType() });
+            if (parser == null)
+                throw new ApplicationException($"Invalid type {typeof(T)}");
             Console.WriteLine($"Enter {input}:");
-            T result;
-            while (!ParseInput(Console.ReadLine(), out result) || compMin(result, minValue) || compMax(result, maxValue))
+            object[] result = { Console.ReadLine(), null};
+            while (!(bool)parser.Invoke(null, result) || !CheckConditions((T)result[1], conditions))
             {
                 Console.WriteLine("Invalid input format! Try again!");
                 Console.WriteLine($"Enter {input}:");
+                result = new object[] { Console.ReadLine(), null };
             }
-            return result;
+            return (T)result[1];
         }
-
+        
         static Random rnd = new Random();
         readonly static ConsoleColor[] ConsolePlates = { ConsoleColor.White, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Blue, ConsoleColor.Yellow, ConsoleColor.Magenta, ConsoleColor.Cyan, ConsoleColor.Black };
         
@@ -170,7 +125,7 @@ namespace Task05
 
                 ConsolePlate[] plateArr = { plate1, plate2 };
 
-                int n = InputVar("size of field", 2, 35, (x, y) => x < y, (x, y) => x > y);
+                int n = InputVar<int>("size of field", x => x >= 2, y => y <= 35);
 
                 for (int i = 0; i < n; ++i)
                 {
