@@ -4,10 +4,6 @@ namespace Task03
 {
     public class TemperatureConvertImp
     {
-        public TemperatureConvertImp()
-        {
-        }
-        
         public double CelciusToFahrenheit(double temperature)
         {
             return 9 * temperature / 5 + 32;

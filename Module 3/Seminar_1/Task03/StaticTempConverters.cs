@@ -2,12 +2,8 @@
 
 namespace Task03
 {
-    public class StaticTempConverters
+    public static class StaticTempConverters
     {
-        public StaticTempConverters()
-        {
-        }
-           
         public static double CelciusToFahrenheit(double temperature)
         {
             return 9 * temperature / 5 + 32;

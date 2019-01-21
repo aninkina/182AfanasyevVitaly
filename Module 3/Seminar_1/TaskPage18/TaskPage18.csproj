@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{C7945BAF-2BED-4DE0-BA20-114D1699855D}</ProjectGuid>
+    <ProjectGuid>{B5CD232B-1CFD-4CF4-AFD9-E2939A0D8A77}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task02</RootNamespace>
-    <AssemblyName>Task02</AssemblyName>
+    <RootNamespace>TaskPage18</RootNamespace>
+    <AssemblyName>TaskPage18</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -36,6 +36,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LibPage18\LibPage18.csproj">
+      <Project>{168AA4EC-4EE8-47B4-97F4-5535D2F93793}</Project>
+      <Name>LibPage18</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Checker\Checker.csproj">
       <Project>{EA4A33B0-44F0-4332-AC5E-9B30D4B24C73}</Project>
       <Name>Checker</Name>

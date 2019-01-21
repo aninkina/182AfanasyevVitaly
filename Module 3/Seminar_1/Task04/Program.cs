@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Checker;
 
 /*
    Дисциплина: "Программирование"
@@ -13,44 +14,6 @@ namespace Task04
 {
     class Program
     {
-        /// <summary>
-        /// Checks if inputed value meets the conditions.
-        /// </summary>
-        /// <returns><c>true</c>, if value met the conditions, <c>false</c> otherwise.</returns>
-        /// <param name="input">Input.</param>
-        /// <param name="conditions">Conditions.</param>
-        static bool CheckConditions<T>(T input, params Func<T, bool>[] conditions)
-        {
-            foreach (Func<T, bool> condition in conditions)
-            {
-                if (!condition.Invoke(input))
-                    return false;
-            }
-            return true;
-        }
-        
-        /// <summary>
-        /// Inputs and parses the variable of type T.
-        /// </summary>
-        /// <returns>Variable of type T.</returns>
-        /// <param name="input">Input.</param>
-        /// <param name="conditions">Conditions.</param>
-        static T InputVar<T>(string input, params Func<T, bool>[] conditions)
-        {
-            var parser = typeof(T).GetMethod("TryParse", new[] { typeof(string), typeof(T).MakeByRefType() });
-            if (parser == null)
-                throw new ApplicationException($"Invalid type {typeof(T)}");
-            Console.Write($"Enter {input}: ");
-            object[] result = { Console.ReadLine(), null};
-            while (!(bool)parser.Invoke(null, result) || !CheckConditions((T)result[1], conditions))
-            {
-                Console.WriteLine("Invalid input format! Try again!");
-                Console.Write($"Enter {input}: ");
-                result = new object[] { Console.ReadLine(), null };
-            }
-            return (T)result[1];
-        }
-
         /// <summary>
         /// Marks the path of the robot on the field. Throws an ArgumentException if the robot is out of bounds.
         /// </summary>
@@ -78,8 +41,8 @@ namespace Task04
                 movement = null;
                 robot.Reset();
 
-                int width = InputVar<int>("width of field (1 - 20)", x => (x > 0) && (x <= 20));
-                int height = InputVar<int>("height of field (1 - 20)", x => (x > 0) && (x <= 20));
+                int width = InputChecker.InputVar<int>("width of field (1 - 20)", x => (x > 0) && (x <= 20));
+                int height = InputChecker.InputVar<int>("height of field (1 - 20)", x => (x > 0) && (x <= 20));
                 field = new char[height, width];
                 for (int i = 0; i < height; ++i)
                     for (int j = 0; j < width; ++j)
