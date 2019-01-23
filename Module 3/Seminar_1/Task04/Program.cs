@@ -17,7 +17,7 @@ namespace Task04
         /// <summary>
         /// Marks the path of the robot on the field. Throws an ArgumentException if the robot is out of bounds.
         /// </summary>
-        public static void MarkPosition()
+        public static void MarkPosition(object sender, EventArgs args)
         {
             if (robot.X < 0 || robot.X >= field.GetLength(1) || robot.Y < 0 || robot.Y >= field.GetLength(0))
                 throw new ArgumentException("Robot is out of bounds.");
