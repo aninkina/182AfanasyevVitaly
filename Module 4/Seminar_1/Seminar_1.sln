@@ -1,0 +1,41 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01", "Task01\Task01.csproj", "{83C2267F-120E-42F1-B498-8776645AD5AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checker", "Checker\Checker.csproj", "{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task02", "Task02\Task02.csproj", "{48E1BCD1-0095-4528-BE1D-301415AD4775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task03", "Task03\Task03.csproj", "{58223152-EACB-4995-BE90-464B6474BAD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task04", "Task04\Task04.csproj", "{C47E7017-2DBB-41AC-B926-55AD5AE8F834}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83C2267F-120E-42F1-B498-8776645AD5AB}.Debug|x86.ActiveCfg = Debug|x86
+		{83C2267F-120E-42F1-B498-8776645AD5AB}.Debug|x86.Build.0 = Debug|x86
+		{83C2267F-120E-42F1-B498-8776645AD5AB}.Release|x86.ActiveCfg = Release|x86
+		{83C2267F-120E-42F1-B498-8776645AD5AB}.Release|x86.Build.0 = Release|x86
+		{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}.Debug|x86.Build.0 = Debug|Any CPU
+		{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}.Release|x86.ActiveCfg = Release|Any CPU
+		{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}.Release|x86.Build.0 = Release|Any CPU
+		{48E1BCD1-0095-4528-BE1D-301415AD4775}.Debug|x86.ActiveCfg = Debug|x86
+		{48E1BCD1-0095-4528-BE1D-301415AD4775}.Debug|x86.Build.0 = Debug|x86
+		{48E1BCD1-0095-4528-BE1D-301415AD4775}.Release|x86.ActiveCfg = Release|x86
+		{48E1BCD1-0095-4528-BE1D-301415AD4775}.Release|x86.Build.0 = Release|x86
+		{58223152-EACB-4995-BE90-464B6474BAD4}.Debug|x86.ActiveCfg = Debug|x86
+		{58223152-EACB-4995-BE90-464B6474BAD4}.Debug|x86.Build.0 = Debug|x86
+		{58223152-EACB-4995-BE90-464B6474BAD4}.Release|x86.ActiveCfg = Release|x86
+		{58223152-EACB-4995-BE90-464B6474BAD4}.Release|x86.Build.0 = Release|x86
+		{C47E7017-2DBB-41AC-B926-55AD5AE8F834}.Debug|x86.ActiveCfg = Debug|x86
+		{C47E7017-2DBB-41AC-B926-55AD5AE8F834}.Debug|x86.Build.0 = Debug|x86
+		{C47E7017-2DBB-41AC-B926-55AD5AE8F834}.Release|x86.ActiveCfg = Release|x86
+		{C47E7017-2DBB-41AC-B926-55AD5AE8F834}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

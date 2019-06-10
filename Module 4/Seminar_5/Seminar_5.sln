@@ -1,0 +1,41 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01", "Task01\Task01.csproj", "{83C2267F-120E-42F1-B498-8776645AD5AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checker", "Checker\Checker.csproj", "{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task02", "Task02\Task02.csproj", "{3F876061-676A-4452-8D5F-81C568A96447}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task03", "Task03\Task03.csproj", "{83AC3CC0-F1FC-4AAA-B93C-5D24418F0369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task04", "Task04\Task04.csproj", "{74D5AE00-CF2A-47A4-B656-234BD05200B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83C2267F-120E-42F1-B498-8776645AD5AB}.Debug|x86.ActiveCfg = Debug|x86
+		{83C2267F-120E-42F1-B498-8776645AD5AB}.Debug|x86.Build.0 = Debug|x86
+		{83C2267F-120E-42F1-B498-8776645AD5AB}.Release|x86.ActiveCfg = Release|x86
+		{83C2267F-120E-42F1-B498-8776645AD5AB}.Release|x86.Build.0 = Release|x86
+		{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}.Debug|x86.Build.0 = Debug|Any CPU
+		{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}.Release|x86.ActiveCfg = Release|Any CPU
+		{4970DEAE-B1B9-4459-8DC8-FCF2065ED001}.Release|x86.Build.0 = Release|Any CPU
+		{3F876061-676A-4452-8D5F-81C568A96447}.Debug|x86.ActiveCfg = Debug|x86
+		{3F876061-676A-4452-8D5F-81C568A96447}.Debug|x86.Build.0 = Debug|x86
+		{3F876061-676A-4452-8D5F-81C568A96447}.Release|x86.ActiveCfg = Release|x86
+		{3F876061-676A-4452-8D5F-81C568A96447}.Release|x86.Build.0 = Release|x86
+		{83AC3CC0-F1FC-4AAA-B93C-5D24418F0369}.Debug|x86.ActiveCfg = Debug|x86
+		{83AC3CC0-F1FC-4AAA-B93C-5D24418F0369}.Debug|x86.Build.0 = Debug|x86
+		{83AC3CC0-F1FC-4AAA-B93C-5D24418F0369}.Release|x86.ActiveCfg = Release|x86
+		{83AC3CC0-F1FC-4AAA-B93C-5D24418F0369}.Release|x86.Build.0 = Release|x86
+		{74D5AE00-CF2A-47A4-B656-234BD05200B9}.Debug|x86.ActiveCfg = Debug|x86
+		{74D5AE00-CF2A-47A4-B656-234BD05200B9}.Debug|x86.Build.0 = Debug|x86
+		{74D5AE00-CF2A-47A4-B656-234BD05200B9}.Release|x86.ActiveCfg = Release|x86
+		{74D5AE00-CF2A-47A4-B656-234BD05200B9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
